@@ -1,4 +1,4 @@
-const BASE_URL = "/bfhl";
+const BASE_URL = import.meta.env.VITE_API_URL || "/bfhl";
 
 export const postBFHL = async (payload) => {
   const res = await fetch(BASE_URL, {
