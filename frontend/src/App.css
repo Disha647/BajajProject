@@ -1,0 +1,372 @@
+/* ── Layout ─────────────────────────────────────────── */
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+  max-width: 860px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+}
+
+/* ── Header ─────────────────────────────────────────── */
+.page-header {
+  background: linear-gradient(135deg, #0f3460 0%, #1a5276 100%);
+  padding: 1.5rem 1.25rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+}
+
+.header-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-badge {
+  background: #e8f4fd;
+  color: #0f3460;
+  font-weight: 800;
+  font-size: 1rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: 8px;
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+}
+
+.page-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.page-sub {
+  font-size: 0.85rem;
+  color: #aac9e8;
+  margin-top: 0.15rem;
+}
+
+/* ── Shared card ────────────────────────────────────── */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #e2e6f0;
+  padding: 1.4rem 1.5rem;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+  margin-bottom: 1.25rem;
+}
+
+.card-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #6b7a99;
+  margin-bottom: 1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid #eef0f6;
+}
+
+/* ── Input card ─────────────────────────────────────── */
+.input-card {
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #e2e6f0;
+  padding: 1.4rem 1.5rem;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+  margin-bottom: 1.5rem;
+}
+
+.input-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.6rem;
+}
+
+.input-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #6b7a99;
+}
+
+.btn-sample {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #1a5276;
+  background: #e8f4fd;
+  border: 1px solid #c2dcf0;
+  border-radius: 6px;
+  padding: 0.3rem 0.8rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-sample:hover { background: #d0eaf8; }
+
+.edge-textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1.5px solid #d5dae8;
+  border-radius: 8px;
+  font-size: 0.98rem;
+  font-family: "Fira Code", monospace;
+  color: #1e2235;
+  resize: vertical;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  background: #fafbfd;
+  line-height: 1.6;
+}
+
+.edge-textarea:focus {
+  outline: none;
+  border-color: #1a5276;
+  box-shadow: 0 0 0 3px rgba(26,82,118,0.1);
+  background: #fff;
+}
+
+.edge-textarea:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.input-hint {
+  font-size: 0.8rem;
+  color: #8a93ad;
+  margin-top: 0.45rem;
+  margin-bottom: 1rem;
+}
+
+.btn-submit {
+  padding: 0.65rem 2rem;
+  background: linear-gradient(135deg, #0f3460, #1a5276);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.98rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s, transform 0.1s;
+  min-width: 130px;
+}
+
+.btn-submit:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
+.btn-submit:disabled { opacity: 0.55; cursor: not-allowed; }
+
+.btn-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+}
+
+/* ── Spinner ────────────────────────────────────────── */
+.spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255,255,255,0.35);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Results section ────────────────────────────────── */
+.results-section { margin-top: 0.5rem; }
+
+.section-heading {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1e2235;
+  margin-bottom: 1rem;
+}
+
+/* ── Identity table ─────────────────────────────────── */
+.info-table { width: 100%; border-collapse: collapse; }
+
+.info-table tr + tr td { border-top: 1px solid #eef0f6; }
+
+.info-key {
+  font-size: 0.82rem;
+  color: #6b7a99;
+  font-weight: 600;
+  padding: 0.45rem 0.5rem 0.45rem 0;
+  white-space: nowrap;
+  width: 40%;
+}
+
+.info-val {
+  font-size: 0.9rem;
+  color: #1e2235;
+  font-weight: 500;
+  padding: 0.45rem 0;
+  word-break: break-all;
+}
+
+/* ── Summary grid ───────────────────────────────────── */
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.summary-stat {
+  background: #f6f8ff;
+  border-radius: 10px;
+  padding: 1rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  border: 1px solid #e2e6f0;
+}
+
+.stat-value {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #0f3460;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #8a93ad;
+}
+
+/* ── Hierarchy cards ────────────────────────────────── */
+.hierarchy-list { display: flex; flex-direction: column; gap: 0.85rem; }
+
+.hierarchy-card {
+  background: #f9fafd;
+  border: 1px solid #e2e6f0;
+  border-radius: 10px;
+  padding: 1rem 1.1rem;
+  margin-bottom: 0;
+}
+
+.hierarchy-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.85rem;
+}
+
+.hierarchy-index {
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: #e2e6f0;
+  color: #6b7a99;
+  padding: 0.2rem 0.55rem;
+  border-radius: 20px;
+}
+
+.hierarchy-root {
+  font-size: 0.92rem;
+  color: #1e2235;
+}
+
+.hierarchy-root strong { color: #0f3460; }
+
+.block-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #8a93ad;
+  margin-bottom: 0.45rem;
+}
+
+.tree-pre {
+  background: #1e2235;
+  color: #a8d8ea;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-family: "Fira Code", monospace;
+  overflow-x: auto;
+  line-height: 1.65;
+  white-space: pre;
+}
+
+.cycle-note {
+  font-size: 0.85rem;
+  color: #c0392b;
+  background: #fdf3f2;
+  border: 1px solid #f5c6c2;
+  border-radius: 6px;
+  padding: 0.6rem 0.85rem;
+}
+
+/* ── Two column layout ──────────────────────────────── */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+/* ── Badges / tags ──────────────────────────────────── */
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.28rem 0.7rem;
+  border-radius: 20px;
+  letter-spacing: 0.02em;
+}
+
+.badge-danger  { background: #fdecea; color: #c0392b; border: 1px solid #f5c6c2; }
+.badge-warning { background: #fef9e7; color: #b7770d; border: 1px solid #f9e4aa; }
+.badge-info    { background: #e8f4fd; color: #1a5276; border: 1px solid #c2dcf0; }
+
+/* ── Empty state ────────────────────────────────────── */
+.empty-note {
+  font-size: 0.85rem;
+  color: #a0aabe;
+  font-style: italic;
+}
+
+/* ── Error banner ───────────────────────────────────── */
+.error-banner {
+  background: #fdecea;
+  border: 1px solid #f5c6c2;
+  color: #c0392b;
+  border-radius: 10px;
+  padding: 0.9rem 1.1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.error-icon { font-size: 1.1rem; }
+
+/* ── Responsive ─────────────────────────────────────── */
+@media (max-width: 600px) {
+  .page-title   { font-size: 1.2rem; }
+  .page-sub     { display: none; }
+  .summary-grid { grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
+  .stat-value   { font-size: 1.35rem; }
+  .two-col      { grid-template-columns: 1fr; }
+  .content      { padding: 1.25rem 1rem 3rem; }
+  .tree-pre     { font-size: 0.75rem; }
+}
